@@ -19,3 +19,4 @@ npm run dev;
 
 - rollup not configured properly
 - semantic-release not configured properly
+- demo should be replaced to other project
