@@ -1,0 +1,26 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "=== husky: pre-commit ==="
+
+# Run tests
+echo "Running tests..."
+npm run test
+
+# Run Prettier
+echo "Running Prettier..."
+prettier_files=$(git diff --cached --name-only --diff-filter=AM -- '*.js' '*.jsx' '*.ts' '*.tsx' '*.json' '*.md' '*.css' '*.html' '*.scss')
+if [ -n "$prettier_files" ]; then
+  echo "$prettier_files" | xargs npx prettier --write
+  git add $prettier_files
+fi
+
+# Run ESLint with auto-fix
+echo "Running ESLint..."
+eslint_files=$(git diff --cached --name-only --diff-filter=AM -- '*.js' '*.jsx' '*.ts' '*.tsx' '*.mjs' '*.cjs')
+if [ -n "$eslint_files" ]; then
+  echo "$eslint_files" | xargs npx eslint --fix --no-ignore --max-warnings=0
+  git add $eslint_files
+fi
+
+echo "=== husky: pre-commit ==="

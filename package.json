@@ -1,0 +1,113 @@
+{
+	"name": "edu-calc",
+	"version": "1.0.0",
+	"description": "Educational graphical calculator",
+	"author": {
+		"name": "David Ghulijanyan",
+		"email": "david.hayki.ghulijanyan@gmail.com"
+	},
+	"homepage": "https://github.com/david-ghulijanyan/graphing-calculator",
+	"repository": {
+		"type": "git",
+		"directory": "/",
+		"url": "https://github.com/david-ghulijanyan/graphing-calculator.git"
+	},
+	"bugs": {
+		"email": "david.hayki.ghulijanyan@gmail.com",
+		"url": "https://github.com/david-ghulijanyan/graphing-calculator/issues"
+	},
+	"type": "module",
+	"main": "dist/esm/index.js",
+	"exports": {
+		".": {
+			"import": "./dist/esm/index.js",
+			"require": "./dist/cjs/index.js",
+			"default": "./dist/esm/index.js"
+		}
+	},
+	"scripts": {
+		"build": "cross-env NODE_ENV=production npx rollup -c",
+		"release": "semantic-release",
+		"test": "glob '**/*.spec.ts' | xargs tsx --no-warnings"
+	},
+	"engines": {
+		"node": ">=20",
+		"npm": ">=9"
+	},
+	"files": [
+		"dist"
+	],
+	"dependencies": {
+		"katex": "^0.16.9",
+		"mathjs": "^12.0.0",
+		"plotly.js": "^2.27.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-katex": "^3.0.1",
+		"react-plotly.js": "^2.6.0",
+		"recoil": "^0.7.7"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.23.0",
+		"@babel/core": "^7.23.3",
+		"@babel/plugin-syntax-import-assertions": "^7.23.3",
+		"@babel/plugin-transform-runtime": "^7.23.3",
+		"@babel/preset-env": "^7.23.3",
+		"@babel/preset-react": "^7.23.3",
+		"@babel/preset-typescript": "^7.23.3",
+		"@babel/runtime": "^7.23.2",
+		"@commitlint/cli": "^18.4.1",
+		"@commitlint/config-angular": "^18.4.0",
+		"@commitlint/ensure": "^18.4.0",
+		"@commitlint/message": "^18.4.0",
+		"@rollup/plugin-alias": "^5.0.1",
+		"@rollup/plugin-babel": "^6.0.4",
+		"@rollup/plugin-commonjs": "^25.0.7",
+		"@rollup/plugin-json": "^6.0.1",
+		"@rollup/plugin-node-resolve": "^15.2.3",
+		"@rollup/plugin-strip": "^3.0.4",
+		"@rollup/plugin-terser": "^0.4.4",
+		"@rollup/plugin-typescript": "^11.1.5",
+		"@rollup/pluginutils": "^5.0.5",
+		"@semantic-release/changelog": "^6.0.3",
+		"@semantic-release/commit-analyzer": "^11.1.0",
+		"@semantic-release/error": "^4.0.0",
+		"@semantic-release/git": "^10.0.1",
+		"@semantic-release/github": "^9.2.3",
+		"@semantic-release/release-notes-generator": "^12.1.0",
+		"@types/glob": "^8.1.0",
+		"@types/node": "^20",
+		"@types/plotly.js": "^2.12.30",
+		"@types/react": "^18",
+		"@types/react-dom": "^18",
+		"@types/react-katex": "^3.0.3",
+		"@typescript-eslint/eslint-plugin": "^6.10.0",
+		"@typescript-eslint/parser": "^6.10.0",
+		"babel-loader": "^9.1.3",
+		"classnames": "^2.3.2",
+		"cross-env": "^7.0.3",
+		"eslint": "^8.53.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-import": "^2.29.0",
+		"eslint-plugin-jsx-a11y": "^6.8.0",
+		"eslint-plugin-prettier": "^5.0.1",
+		"eslint-plugin-react": "^7.33.2",
+		"eslint-plugin-unicorn": "^49.0.0",
+		"glob": "^10.3.10",
+		"husky": "^8.0.3",
+		"jsdoc": "^4.0.2",
+		"prettier": "^3.0.3",
+		"rollup": "^4.4.0",
+		"rollup-plugin-copy": "^3.5.0",
+		"rollup-plugin-delete": "^2.0.0",
+		"rollup-plugin-dts": "^6.1.0",
+		"rollup-plugin-license": "^3.2.0",
+		"rollup-plugin-postcss": "^4.0.2",
+		"rollup-plugin-sri": "^1.3.4",
+		"sass": "^1.69.5",
+		"semantic-release": "^22.0.7",
+		"tsx": "^4.1.1",
+		"typescript": "^5"
+	}
+}

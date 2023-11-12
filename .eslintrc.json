@@ -1,0 +1,159 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"project": "./tsconfig.json"
+	},
+	"extends": [
+		"airbnb",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:unicorn/all",
+		"prettier",
+		"eslint-config-prettier",
+		"plugin:react/jsx-runtime"
+	],
+	"plugins": ["@typescript-eslint", "import", "unicorn"],
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"rules": {
+		"react/jsx-filename-extension": [
+			1,
+			{
+				"extensions": [".jsx", ".tsx"]
+			}
+		],
+		"react/require-default-props": [
+			2,
+			{
+				"forbidDefaultForRequired": true,
+				"classes": "defaultProps",
+				"functions": "defaultArguments"
+			}
+		],
+		"import/no-extraneous-dependencies": 0,
+		"arrow-parens": ["error", "always"],
+		"max-len": [
+			"off",
+			{
+				"code": 120
+			}
+		],
+		"newline-before-return": "error",
+		"no-console": [
+			"error",
+			{
+				"allow": ["warn", "error"]
+			}
+		],
+		"no-param-reassign": "error",
+		"no-unused-vars": "off",
+		"@typescript-eslint/no-unused-vars": ["error"],
+		"unicorn/filename-case": [
+			"error",
+			{
+				"cases": {
+					"camelCase": true
+				}
+			}
+		],
+		"prefer-template": "error",
+		"unicorn/catch-error-name": "error",
+		"unicorn/prevent-abbreviations": "error",
+		"unicorn/no-fn-reference-in-iterator": "error",
+		"unicorn/no-null": "off",
+		"unicorn/prefer-module": "off",
+		"unicorn/no-keyword-prefix": "off",
+		"indent": [
+			"error",
+			"tab",
+			{
+				"SwitchCase": 1
+			}
+		],
+		"quotes": ["error", "double"],
+		"semi": ["error", "always"],
+		"import/extensions": "off",
+		"import/no-unresolved": [
+			"error",
+			{
+				"ignore": ["^node:"]
+			}
+		],
+		"import/prefer-default-export": ["off"],
+		"no-restricted-syntax": [
+			"error",
+			{
+				"selector": "ForInStatement",
+				"message": "for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use 'for..of' instead."
+			},
+			{
+				"selector": "LabeledStatement",
+				"message": "Labels are a form of GOTO using them makes code confusing and hard to maintain and understand."
+			},
+			{
+				"selector": "WithStatement",
+				"message": "'with' is disallowed in strict mode because it makes code impossible to predict and optimize."
+			},
+			{
+				"selector": "CallExpression[callee.object.name='Array'][callee.property.name='forEach']",
+				"message": "'Array.prototype.forEach' is not allowed, use 'for..of' instead."
+			}
+		],
+		"import/order": [
+			"error",
+			{
+				"groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+				"newlines-between": "always"
+			}
+		],
+		"array-bracket-newline": ["error", "always"],
+		"array-element-newline": ["error", "always"],
+		"newline-per-chained-call": [
+			"error",
+			{
+				"ignoreChainWithDepth": 1
+			}
+		],
+		"object-property-newline": [
+			"error",
+			{
+				"allowAllPropertiesOnSameLine": false
+			}
+		],
+		"operator-linebreak": ["error", "before"],
+		"comma-spacing": [
+			"error",
+			{
+				"before": false,
+				"after": true
+			}
+		],
+		"no-mixed-spaces-and-tabs": "error"
+	},
+	"settings": {
+		"json/sort-package-json": [
+			"name",
+			"version",
+			"description",
+			"author",
+			"license",
+			"private",
+			"homepage",
+			"repository",
+			"bugs",
+			"type",
+			"main",
+			"module",
+			"browser",
+			"exports",
+			"bin",
+			"scripts",
+			"engines",
+			"files",
+			"dependencies",
+			"devDependencies"
+		]
+	}
+}

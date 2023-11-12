@@ -1,0 +1,10 @@
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+
+# Types: ['build','chore','ci','docs','feat','fix','perf','refactor','revert','style','test']
+# 'feat' type changes minor version
+# 'fix' type changes patch version
+# any type which has 'BREACKING CHANGE:' tag changes major version

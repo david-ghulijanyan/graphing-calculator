@@ -1,0 +1,14 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "=== huksy = post-checkout ==="
+
+# If commit.template is not set, set it to the specified template file
+if [ ! -f "$(git config --path --get commit.template)" ]; then
+
+  npx husky install
+
+  git config --local commit.template .gitmessage.txt
+fi
+
+echo "=== huksy = post-checkout ==="
